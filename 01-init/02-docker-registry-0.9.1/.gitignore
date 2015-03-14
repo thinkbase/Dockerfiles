@@ -8,7 +8,7 @@
 .coverage
 .tox
 htmlcov
-config/config.yml
+#config/config.yml
 config/*.pem
 newrelic.ini
 reports
