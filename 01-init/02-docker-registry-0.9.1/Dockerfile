@@ -2,8 +2,8 @@
 # DOCKER-VERSION  0.7.3
 # AUTHOR:         Sam Alba <sam@docker.com>
 # DESCRIPTION:    Image with docker-registry project and dependecies
-# TO_BUILD:       docker.io build -rm -t docker-registry .
-# TO_RUN:         docker.io run -d -p 5000:5000 -p 10122:22 -v /home/vmware/docker-registry-data:/data docker-registry
+# TO_BUILD:       docker.io build -rm -t docker-registry:0.9.1 .
+# TO_RUN:         docker.io run -d -p 5000:5000 -p 10122:22 -v /home/vmware/docker-registry-data:/data docker-registry:0.9.1
 
 # Latest Ubuntu LTS
 ##FROM ubuntu:14.04
