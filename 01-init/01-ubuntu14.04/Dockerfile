@@ -1,14 +1,12 @@
 # Install openssh-server in ubuntu 14.04
-#    For initiation, you should remain it's tag "ubuntu:14.04", then every image based
-#    on ubuntu 14.04 should build from local image instead of global registry
 #
 # Build this image:
-#   docker.io build --rm -t ubuntu:14.04 .
+#   docker.io build --rm -t ubuntu:14.04:sshd .
 # Run this image:
-#   docker.io stop ubuntu_sshd-vm && sudo docker.io rm ubuntu_sshd-vm
-#   docker.io run -d -p 10022:22 --name ubuntu_sshd-vm ubuntu:14.04
+#   docker.io stop ubuntu_sshd && docker.io rm ubuntu_sshd
+#   docker.io run -d -p 10022:22 --name ubuntu_sshd ubuntu:14.04:sshd
 # Or console only:
-#   sudo docker.io run -i -t --name ubuntu_sshd-vm ubuntu:14.04 /bin/bash
+#   docker.io run -i -t --name ubuntu_sshd ubuntu:14.04:sshd /bin/bash
 
 FROM ubuntu:14.04
 MAINTAINER thinkbase
