@@ -2,11 +2,12 @@
 # DOCKER-VERSION  0.7.3
 # AUTHOR:         Sam Alba <sam@docker.com>
 # DESCRIPTION:    Image with docker-registry project and dependecies
-# TO_BUILD:       docker build -rm -t registry .
-# TO_RUN:         docker run -p 5000:5000 registry
+# TO_BUILD:       docker.io build -rm -t docker-registry .
+# TO_RUN:         docker.io run -d -p 5000:5000 -p 10122:22 -v /home/vmware/docker-registry-data:/data docker-registry
 
 # Latest Ubuntu LTS
-FROM ubuntu:14.04
+##FROM ubuntu:14.04
+FROM ubuntu:14.04-sshd
 
 # Update
 RUN apt-get update \
@@ -34,9 +35,10 @@ RUN patch \
  $(python -c 'import boto; import os; print os.path.dirname(boto.__file__)')/connection.py \
  < /docker-registry/contrib/boto_header_patch.diff
 
-ENV DOCKER_REGISTRY_CONFIG /docker-registry/config/config_sample.yml
-ENV SETTINGS_FLAVOR dev
+ENV DOCKER_REGISTRY_CONFIG /docker-registry/config/config.yml
+ENV SETTINGS_FLAVOR prod
 
-EXPOSE 5000
-
-CMD ["docker-registry"]
+RUN cp /docker-registry/supervisord/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+VOLUME ["/data"]
+EXPOSE 22 5000
+CMD ["/usr/bin/supervisord"]
