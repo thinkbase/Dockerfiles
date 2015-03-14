@@ -3,7 +3,7 @@ set -e
 set -x
 
 # make sure the package repository is up to date
-echo "deb http://archive.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list
+echo "deb http://cn.archive.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list
 apt-get update
 
 # Install openssh server
