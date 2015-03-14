@@ -25,5 +25,6 @@ RUN echo "u01:docker.io" | chpasswd     # Can't set password properly with "-p" 
 
 # OpenSSH Server running at port 22
 EXPOSE 22
-#CMD /usr/sbin/sshd -D
-ENTRYPOINT ["/usr/sbin/sshd", "-D"]
+CMD ["/usr/sbin/sshd", "-D"]
+#ENTRYPOINT ["/usr/sbin/sshd", "-D"]
+
