@@ -3,7 +3,7 @@
 # Build this image:
 #   docker.io build -rm -t docker-registry:0.9.1 .
 # Run this image:
-#   docker.io run -d -p 5000:5000 -p 10122:22 -v /home/vmware/docker-registry-data:/data docker-registry:0.9.1
+#   docker.io run -d -p 5000:5000 -p 10122:22 -v /home/vmware/docker-registry-data:/data -name docker-registry docker-registry:0.9.1
 #
 # *****************************************************************************
 # From: https://github.com/docker/docker-registry/blob/0.9.1/Dockerfile
