@@ -9,22 +9,12 @@
 #   docker.io run -i -t --name ubuntu_sshd ubuntu:14.04-sshd /bin/bash
 
 FROM ubuntu:14.04
-MAINTAINER thinkbase
+MAINTAINER thinkbase.net
 
-# make sure the package repository is up to date
-RUN echo "deb http://archive.ubuntu.com/ubuntu trusty main universe" > /etc/apt/sources.list
-RUN apt-get update
-
-# Install openssh server
-RUN apt-get install -y openssh-server
-RUN mkdir /var/run/sshd
-
-# Create user "u01", password "docker.io"
-RUN useradd -mU -u 1000 -G sudo -d /home/u01 -s /bin/bash u01
-RUN echo "u01:docker.io" | chpasswd     # Can't set password properly with "-p" argument in "useradd" command
+ADD ./files /tmp/files
+RUN ./tmp/files/install.sh
 
 # OpenSSH Server running at port 22
 EXPOSE 22
-CMD ["/usr/sbin/sshd", "-D"]
-#ENTRYPOINT ["/usr/sbin/sshd", "-D"]
+ENTRYPOINT ["/usr/bin/supervisord"]
 
