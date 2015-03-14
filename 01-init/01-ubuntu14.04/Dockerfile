@@ -12,6 +12,7 @@ FROM ubuntu:14.04
 MAINTAINER thinkbase.net
 
 ADD ./files /tmp/files
+
 RUN chmod +x /tmp/files/install.sh
 RUN /tmp/files/install.sh
 

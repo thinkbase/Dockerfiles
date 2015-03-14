@@ -17,4 +17,3 @@ echo "u01:docker.io" | chpasswd     # Can't set password properly with "-p" argu
 # install supervisor
 apt-get install -y supervisor
 cp /tmp/files/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
-
