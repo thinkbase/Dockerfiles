@@ -1,0 +1,21 @@
+# Install openssh-server in ubuntu 14.04
+#
+# Build this image:
+#   docker.io build --rm -t trac:1.0.1 .
+# Run this image:
+#   docker.io run -d -p 10022:22 -p 80:8080 -v /home/vmware/trac-data:/data --name trac trac:1.0.1
+
+FROM ubuntu:14.04-sshd
+MAINTAINER thinkbase.net
+
+ADD ./files /tmp/files
+
+RUN chmod +x /tmp/files/install.sh
+RUN /tmp/files/install.sh
+
+# Data volume for trac
+VOLUME ["/data"]
+
+# OpenSSH Server running at port 22, Trac running at port 8080
+EXPOSE 22 8080
+CMD ["/usr/bin/supervisord"]
