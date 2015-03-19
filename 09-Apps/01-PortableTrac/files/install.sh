@@ -14,16 +14,17 @@ easy_install pysqlite
 
 # Install git and clone PortableTrac
 apt-get install -y git
-mkdir -p /opt/PortableTrac/github
-cd /opt/PortableTrac/github
-git clone https://github.com/thinkbase/PortableTrac
+su -c u01 mkdir -p /home/u01/github
+cd /home/u01/github
+su -c u01 git clone https://github.com/thinkbase/PortableTrac
 
 # Install PortableTrac
-cd /opt/PortableTrac/github/PortableTrac/linux/install
+cd /home/u01/github/PortableTrac/linux/install
 chmod +x ./install-PortableTrac.sh
 ./install-PortableTrac.sh
 
-#apt-get install -y apache2 apache2-utils libapache2-mod-python
+# Install apache
+apt-get install -y apache2 apache2-utils libapache2-mod-python
 
 # deploy supervisor
 cp /tmp/files/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
