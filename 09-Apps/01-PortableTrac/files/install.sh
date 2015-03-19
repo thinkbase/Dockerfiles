@@ -14,9 +14,9 @@ easy_install pysqlite
 
 # Install git and clone PortableTrac
 apt-get install -y git
-su -c u01 mkdir -p /home/u01/github
+su u01 -c mkdir -p /home/u01/github
 cd /home/u01/github
-su -c u01 git clone https://github.com/thinkbase/PortableTrac
+su u01 -c git clone https://github.com/thinkbase/PortableTrac
 
 # Install PortableTrac
 cd /home/u01/github/PortableTrac/linux/install
