@@ -2,6 +2,10 @@
 set -e
 set -x
 
+# Fix the locale
+locale-gen en_US en_US.UTF-8 zh_CN zh_CN.UTF-8
+dpkg-reconfigure locales
+
 # make sure the package repository is up to date
 echo "deb http://cn.archive.ubuntu.com/ubuntu trusty main restricted" > /etc/apt/sources.list
 echo "deb http://cn.archive.ubuntu.com/ubuntu trusty-updates main restricted" >> /etc/apt/sources.list
