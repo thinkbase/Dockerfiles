@@ -5,18 +5,18 @@ set -x
 # make sure the package repository is up to date
 apt-get update
 
+# Install git and clone PortableTrac
+apt-get install -y git
+su u01 -c "mkdir -p /home/u01/github"
+cd /home/u01/github
+su u01 -c "git clone https://github.com/thinkbase/PortableTrac"
+
 # Install dependencies
 apt-get install -y sqlite3
 apt-get install -y build-essential
 apt-get install -y python python-setuptools python-genshi python-subversion
 apt-get install -y python-dev libsqlite3-dev
 easy_install pysqlite
-
-# Install git and clone PortableTrac
-apt-get install -y git
-su u01 -c mkdir -p /home/u01/github
-cd /home/u01/github
-su u01 -c git clone https://github.com/thinkbase/PortableTrac
 
 # Install PortableTrac
 cd /home/u01/github/PortableTrac/linux/install
