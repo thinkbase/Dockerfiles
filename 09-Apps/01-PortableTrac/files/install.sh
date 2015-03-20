@@ -6,6 +6,9 @@ set -x
 locale-gen en_US en_US.UTF-8 zh_CN zh_CN.UTF-8
 dpkg-reconfigure locales
 
+# Prepare /data - change Owner to u01
+chown -Rv u01:u01 /data
+
 # make sure the package repository is up to date
 apt-get update
 
@@ -26,9 +29,6 @@ easy_install pysqlite
 cd /home/u01/github/PortableTrac/linux/install
 chmod +x ./install-PortableTrac.sh
 ./install-PortableTrac.sh
-
-# Prepare /data - change Owner to u01
-chown -Rv u01:u01 /data
 
 # Install apache
 apt-get install -y apache2 apache2-utils libapache2-mod-python
