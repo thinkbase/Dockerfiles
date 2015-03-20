@@ -13,7 +13,7 @@ apt-get update
 apt-get install -y git
 su u01 -c "mkdir -p /home/u01/github"
 cd /home/u01/github
-su u01 -c "git clone https://github.com/thinkbase/PortableTrac"
+su u01 -c "git clone -v https://github.com/thinkbase/PortableTrac"
 
 # Install dependencies
 apt-get install -y sqlite3
