@@ -14,7 +14,7 @@ cp /tmp/files/passwd /data/protected/passwd
 chown -Rv www-data:www-data /data
 chmod -Rv g+rw /data
 # Add u01 to group www-data
-usermod -G www-data u01
+usermod -aG www-data u01
 
 # make sure the package repository is up to date
 apt-get update
