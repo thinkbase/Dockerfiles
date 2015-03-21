@@ -33,5 +33,8 @@ chmod +x ./install-PortableTrac.sh
 # Install apache
 apt-get install -y apache2 apache2-utils libapache2-mod-python
 
+# Deploy apache conf for trac
+cp /tmp/files/000-default.conf /etc/apache2/sites-enabled/000-default.conf
+
 # deploy supervisor
 cp /tmp/files/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
