@@ -6,11 +6,15 @@ set -x
 locale-gen en_US en_US.UTF-8 zh_CN zh_CN.UTF-8
 dpkg-reconfigure locales
 
-# Prepare /data - change Owner to u01
+# Prepare /data
 mkdir -p /data/tracenv
 mkdir -p /data/protected
 cp /tmp/files/passwd /data/protected/passwd
+# Owner is www-data and group member can rw
 chown -Rv www-data:www-data /data
+chmod -Rv g+rw /data
+# Add u01 to group www-data
+usermod -G www-data u01
 
 # make sure the package repository is up to date
 apt-get update
