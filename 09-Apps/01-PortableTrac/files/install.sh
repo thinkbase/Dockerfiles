@@ -7,7 +7,10 @@ locale-gen en_US en_US.UTF-8 zh_CN zh_CN.UTF-8
 dpkg-reconfigure locales
 
 # Prepare /data - change Owner to u01
-chown -Rv u01:u01 /data
+mkdir -p /data/tracenv
+mkdir -p /data/protected
+cp /tmp/files/passwd /data/protected/passwd
+chown -Rv www-data:www-data /data
 
 # make sure the package repository is up to date
 apt-get update
