@@ -19,6 +19,9 @@ usermod -aG www-data u01
 # make sure the package repository is up to date
 apt-get update
 
+# Install nano editor
+apt-get install -y nano
+
 # Install git and clone PortableTrac
 apt-get install -y git
 su u01 -c "mkdir -p /home/u01/github"
@@ -39,6 +42,7 @@ chmod +x ./install-PortableTrac.sh
 
 # Install apache
 apt-get install -y apache2 apache2-utils libapache2-mod-python
+a2enmod auth_digest
 
 # Deploy apache conf for trac
 cp /tmp/files/000-default.conf /etc/apache2/sites-enabled/000-default.conf
