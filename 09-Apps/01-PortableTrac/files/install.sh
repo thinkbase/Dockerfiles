@@ -6,9 +6,6 @@ set -x
 locale-gen en_US en_US.UTF-8 zh_CN zh_CN.UTF-8
 dpkg-reconfigure locales
 
-# Add u01 to group www-data
-usermod -aG www-data u01
-
 # make sure the package repository is up to date
 apt-get update
 
@@ -38,7 +35,7 @@ apt-get install -y apache2 apache2-utils libapache2-mod-python
 a2enmod auth_digest
 
 # Deploy apache conf for trac
-cp /tmp/files/000-default.conf /etc/apache2/sites-enabled/000-default.conf
+#cp /tmp/files/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 
 # deploy supervisor
 cp /tmp/files/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
