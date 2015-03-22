@@ -9,8 +9,8 @@ dpkg-reconfigure locales
 # make sure the package repository is up to date
 apt-get update
 
-# Install nano editor
-apt-get install -y nano
+# Install utilities
+apt-get install -y nano telnet
 
 # Install git and clone PortableTrac
 apt-get install -y git
@@ -35,7 +35,13 @@ apt-get install -y apache2 apache2-utils libapache2-mod-python
 a2enmod auth_digest
 
 # Deploy apache conf for trac
-#cp /tmp/files/000-default.conf /etc/apache2/sites-enabled/000-default.conf
+mv /etc/apache2/ports.conf /etc/apache2/ports.conf.orig
+cp /tmp/files/ports.conf /etc/apache2/ports.conf
+a2dissite 000-default
+cp /tmp/files/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 
 # deploy supervisor
 cp /tmp/files/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+# finally
+rm -rfv /tmp/files
