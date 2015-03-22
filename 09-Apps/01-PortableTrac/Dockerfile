@@ -12,7 +12,6 @@ ADD ./files /tmp/files
 
 # Data volume for trac
 VOLUME ["/data"]
-chown -Rv www-data:www-data /data
 
 # Run install script
 RUN chmod +x /tmp/files/install.sh
