@@ -35,9 +35,10 @@ apt-get install -y apache2 apache2-utils libapache2-mod-python
 a2enmod auth_digest
 apt-get install -y libapache2-svn
 
-# Install graphviz and java
+# Install graphviz, java, and Chinese font
 apt-get install -y graphviz
 apt-get install -y default-jre
+apt-get install -y ttf-wqy-microhei
 
 # Deploy apache conf for trac
 mv /etc/apache2/ports.conf /etc/apache2/ports.conf.orig
