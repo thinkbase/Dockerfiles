@@ -33,7 +33,7 @@ chmod +x ./install-PortableTrac.sh
 # Install apache
 apt-get install -y apache2 apache2-utils libapache2-mod-python
 a2enmod auth_digest
-sudo apt-get install libapache2-svn
+apt-get install -y libapache2-svn
 
 # Install graphviz and java
 apt-get install -y graphviz
