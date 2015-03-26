@@ -36,8 +36,8 @@ a2enmod auth_digest
 sudo apt-get install libapache2-svn
 
 # Install graphviz and java
-apt-get install graphviz
-apt-get install default-jre
+apt-get install -y graphviz
+apt-get install -y default-jre
 
 # Deploy apache conf for trac
 mv /etc/apache2/ports.conf /etc/apache2/ports.conf.orig
