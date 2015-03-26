@@ -33,6 +33,7 @@ chmod +x ./install-PortableTrac.sh
 # Install apache
 apt-get install -y apache2 apache2-utils libapache2-mod-python
 a2enmod auth_digest
+sudo apt-get install libapache2-svn
 
 # Deploy apache conf for trac
 mv /etc/apache2/ports.conf /etc/apache2/ports.conf.orig
