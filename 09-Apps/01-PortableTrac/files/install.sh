@@ -40,6 +40,10 @@ cp /tmp/files/ports.conf /etc/apache2/ports.conf
 a2dissite 000-default
 cp /tmp/files/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 
+# Make u01 and www-data the same group
+usermod u01 -aG www-data
+usermod www-data -aG u01
+
 # deploy supervisor
 cp /tmp/files/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
