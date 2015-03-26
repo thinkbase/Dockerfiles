@@ -35,6 +35,10 @@ apt-get install -y apache2 apache2-utils libapache2-mod-python
 a2enmod auth_digest
 sudo apt-get install libapache2-svn
 
+# Install graphviz and java
+apt-get install graphviz
+apt-get install default-jre
+
 # Deploy apache conf for trac
 mv /etc/apache2/ports.conf /etc/apache2/ports.conf.orig
 cp /tmp/files/ports.conf /etc/apache2/ports.conf
