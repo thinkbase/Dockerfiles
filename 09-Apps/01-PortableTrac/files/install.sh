@@ -33,6 +33,7 @@ chmod +x ./install-PortableTrac.sh
 # Install apache
 apt-get install -y apache2 apache2-utils libapache2-mod-python
 a2enmod auth_digest
+a2enmod authnz_ldap
 apt-get install -y libapache2-svn
 
 # Install graphviz, java, and Chinese font
