@@ -1,16 +1,16 @@
-# Install trac / apache in ubuntu 14.04
+# Install cron support based on 01-PortableTrac in ubuntu 14.04
 #
 # Build this image:
-#   docker.io build --rm -t trac:1.0 .
+#   docker.io build --rm -t trac-with-cron:1.0 .
 # Run this image:
-#   docker.io run -d -p 10222:22 -p 8080:8080 -v /home/vmware/trac-data:/data --name trac trac:1.0
+#   docker.io run -d -p 10222:22 -p 8080:8080 -v /home/vmware/trac-data:/data --name trac trac-with-cron:1.0
 
-FROM ubuntu:14.04-sshd
+FROM trac:1.0
 MAINTAINER thinkbase.net
 
 ADD ./files /tmp/files
 
-# Data volume for trac
+# Data volume for trac and cron
 VOLUME ["/data"]
 
 # Run install script
