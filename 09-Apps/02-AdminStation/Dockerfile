@@ -3,7 +3,7 @@
 # Build this image:
 #   docker.io build --rm -t admin:1.0 .
 # Run this image:
-#   docker.io run -d -p 10902:22 -p 8080:8080 -v /home/vmware/admin-data:/data --name admin admin:1.0
+#   docker.io run -d -p 10902:22 -p 8081:8080 -v /home/vmware/admin-data:/data --name admin admin:1.0
 
 FROM ubuntu:14.04-sshd
 MAINTAINER thinkbase.net
