@@ -54,5 +54,8 @@ usermod www-data -aG u01
 # deploy supervisor
 cp /tmp/files/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
+# change timezone to Asia/Shanghai
+cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
 # finally
 rm -rfv /tmp/files
