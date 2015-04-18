@@ -1,0 +1,5 @@
+Based on https://github.com/mproch/docker-oracle-xe .
+ - oracle-xe_11.2.0-2_amd64 installed, port is 1521
+ - OpenSSH Server, port is 22
+ - Place oradata at /u01/oradata, it's a volumn
+ - Password of SYS/SYSTEM is "changeme"
