@@ -18,4 +18,3 @@ RUN /tmp/files/install.sh
 # OpenSSH Server running at port 22
 EXPOSE 22
 CMD ["/usr/bin/supervisord"]
-
