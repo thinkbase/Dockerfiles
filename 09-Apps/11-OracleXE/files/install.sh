@@ -31,17 +31,24 @@ chmod +x /*.sh
 echo "ORACLE_HOME=\"$ORACLE_HOME\"
 ORACLE_SID=\"$ORACLE_SID\"
 PATH=\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$ORACLE_HOME/bin\"
+LANG=\"en_US.UTF-8\"
+NLS_LANG=\"AMERICAN_AMERICA.UTF8\"
 " > /etc/environment
 
 #change oracle's env
 echo "ORACLE_HOME=\"$ORACLE_HOME\"
 ORACLE_SID=\"$ORACLE_SID\"
 PATH=\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$ORACLE_HOME/bin\"
+LANG=\"en_US.UTF-8\"
+NLS_LANG=\"AMERICAN_AMERICA.UTF8\"
 " > /u01/app/oracle/.profile
 
 # install supervisor
 apt-get install -y supervisor
 cp supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+# change timezone to Asia/Shanghai
+cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 #clean up
 cd /tmp
