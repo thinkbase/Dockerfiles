@@ -18,6 +18,9 @@ then
     echo "Database files are in /u01/oradata/XE, remove original files ..."
     rm -rfv /u01/app/oracle/oradata/XE
     ln -sv /u01/oradata/XE /u01/app/oracle/oradata/XE
+    echo "Online log files are in /u01/oradata/fast_recovery_area/XE, remove original files ..."
+    rm -rfv /u01/app/oracle/fast_recovery_area/XE
+    ln -sv /u01/oradata/fast_recovery_area/XE /u01/app/oracle/fast_recovery_area/XE
 elif [ -d "/u01/oradata" ]
 then
     echo "Move original database files to /u01/oradata/XE before starting ..."

@@ -4,7 +4,7 @@
 #
 # Run this image:
 #   mkdir -p ~/VM_data/docker/oradata
-#   docker.io run -d -p 11022:22 -p 11521:1521 -v ~/VM_data/docker/oradata:/u01/oradata --name oraclexe oraclexe:1.0
+#   docker.io run -d -p 11022:22 -p 11521:1521 -v ~/VM_data/docker/oradata:/u01/oradata -v /tmp:/tmp --name oraclexe oraclexe:1.0
 #
 # The default password of SYSTEM and SYS is "changeme"(defined in install.sh);
 # SQL to chenge their password:
