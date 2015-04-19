@@ -1,9 +1,10 @@
 # Install oracle 11g XE in ubuntu 14.04/x64
 # Build this image:
-#   docker.io build --rm -t oracleXE:1.0 .
+#   docker.io build --rm -t oraclexe:1.0 .
 #
 # Run this image:
-#   docker.io run -d -p 11022:22 -p 11521:1521 -v /home/vmware/oradata:/u01/oradata --name oracleXE oracleXE:1.0
+#   mkdir -p ~/VM_data/docker/oradata
+#   docker.io run -d -p 11022:22 -p 11521:1521 -v ~/VM_data/docker/oradata:/u01/oradata --name oraclexe oraclexe:1.0
 #
 # The default password of SYSTEM and SYS is "changeme"(defined in install.sh);
 # SQL to chenge their password:
@@ -28,5 +29,4 @@ VOLUME ["/u01/oradata"]
 RUN ./tmp/filesOracle/install.sh
 
 EXPOSE 22 1521
-ENTRYPOINT ["/usr/bin/supervisord"]
-
+CMD ["/usr/bin/supervisord"]

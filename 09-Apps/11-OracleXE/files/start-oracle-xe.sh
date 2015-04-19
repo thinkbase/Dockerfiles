@@ -24,6 +24,10 @@ then
     chown -v oracle:dba /u01/oradata
     mv -v /u01/app/oracle/oradata/XE /u01/oradata/XE
     ln -sv /u01/oradata/XE /u01/app/oracle/oradata/XE
+    # Move onlinelog from /u01/app/oracle/fast_recovery_area/XE to /u01/oradata/fast_recovery_area/XE
+    mkdir -p /u01/oradata/fast_recovery_area
+    mv -v /u01/app/oracle/fast_recovery_area/XE /u01/oradata/fast_recovery_area/XE
+    ln -sv /u01/oradata/fast_recovery_area/XE /u01/app/oracle/fast_recovery_area/XE
 fi 
 
 /etc/init.d/oracle-xe start

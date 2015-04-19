@@ -11,7 +11,7 @@ cp chkconfig /sbin/chkconfig
 chmod 755 /sbin/chkconfig
 ln -s /proc/mounts /etc/mtab
 
-cat /tmp/filesOracle/oracle-xe_11.2.0-2_amd64.deb-splited.* > /tmp/filesOracle/oracle-xe_11.2.0-2_amd64.deb
+cat /tmp/filesOracle/oracle-xe_11.2.0-2_amd64.deb-splited/oracle-xe_11.2.0-2_amd64.deb-splited.* > /tmp/filesOracle/oracle-xe_11.2.0-2_amd64.deb
 dpkg --install /tmp/filesOracle/oracle-xe_11.2.0-2_amd64.deb
 
 #change memory_target
@@ -32,6 +32,12 @@ echo "ORACLE_HOME=\"$ORACLE_HOME\"
 ORACLE_SID=\"$ORACLE_SID\"
 PATH=\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$ORACLE_HOME/bin\"
 " > /etc/environment
+
+#change oracle's env
+echo "ORACLE_HOME=\"$ORACLE_HOME\"
+ORACLE_SID=\"$ORACLE_SID\"
+PATH=\"/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$ORACLE_HOME/bin\"
+" > /u01/app/oracle/.profile
 
 # install supervisor
 apt-get install -y supervisor
