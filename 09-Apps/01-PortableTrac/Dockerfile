@@ -1,7 +1,7 @@
 # Install trac / apache in ubuntu 14.04
 #
 # Build this image:
-#   docker.io build --rm -t trac:1.1 .
+#   docker.io build --rm --no-cache -t trac:1.1 .
 # Run this image:
 #   docker.io run -d -p 10222:22 -p 8080:8080 -v /home/vmware/trac-data:/data --name trac trac:1.1
 
