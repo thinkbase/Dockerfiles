@@ -11,7 +11,9 @@ apt-get update
 
 # Install utilities
 apt-get install -y nano telnet
-apt-get install -y build-essential libv8-dev
+
+# Install development tools
+apt-get install -y build-essential phantomjs
 
 # Install git/svn
 apt-get install -y git subversion
@@ -31,8 +33,10 @@ npm config set prefix /opt/gulp-base/node_global
 npm config set cache /opt/gulp-base/node_cache
 npm config set registry https://registry.npm.taobao.org
 
-# Install gulp
+# Install gulp, bower, browserify
 npm install -g gulp -verbose
+npm install -g bower -verbose
+npm install -g browserify -verbose
 
 # Prepare ENV for u01
 echo "export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/dist" >> /home/u01/.bashrc
