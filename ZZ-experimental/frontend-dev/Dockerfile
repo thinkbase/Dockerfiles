@@ -3,7 +3,7 @@
 # Build this image:
 #   docker.io build --force-rm -t frontend-dev:1.0 .
 # Run this image:
-#   docker.io run -d -p 12102:22 -p 8888:8888 -v /home/vmware/workspace:/workspace --name frontend-dev frontend-dev:1.0
+#   docker.io run -d -p 21022:22 -p 8888:8888 -v /home/vmware/workspace:/workspace --name frontend-dev frontend-dev:1.0
 
 FROM ubuntu:14.04-sshd
 MAINTAINER thinkbase.net
