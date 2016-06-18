@@ -10,19 +10,19 @@ dpkg-reconfigure locales
 apt-get update
 
 # Install utilities
-apt-get install -y nano telnet
+apt-get install -y --force-yes nano telnet
 
 # Install git/svn and clone PortableTrac
-apt-get install -y git subversion
+apt-get install -y --force-yes git subversion
 su u01 -c "mkdir -p /home/u01/github"
 cd /home/u01/github
 su u01 -c "git clone -v --progress https://github.com/thinkbase/PortableTrac"
 
 # Install dependencies
-apt-get install -y sqlite3
-apt-get install -y build-essential
-apt-get install -y python python-setuptools python-genshi python-subversion
-apt-get install -y python-dev libsqlite3-dev
+apt-get install -y --force-yes sqlite3
+apt-get install -y --force-yes build-essential
+apt-get install -y --force-yes python python-setuptools python-genshi python-subversion
+apt-get install -y --force-yes python-dev libsqlite3-dev
 easy_install pysqlite
 
 # Install PortableTrac
@@ -31,15 +31,15 @@ chmod +x ./install-PortableTrac.sh
 ./install-PortableTrac.sh
 
 # Install apache
-apt-get install -y apache2 apache2-utils libapache2-mod-python
+apt-get install -y --force-yes apache2 apache2-utils libapache2-mod-python
 a2enmod auth_digest
 a2enmod authnz_ldap
-apt-get install -y libapache2-svn
+apt-get install -y --force-yes libapache2-svn
 
 # Install graphviz, java, and Chinese font
-apt-get install -y graphviz
-apt-get install -y default-jre
-apt-get install -y ttf-wqy-microhei
+apt-get install -y --force-yes graphviz
+apt-get install -y --force-yes default-jre
+apt-get install -y --force-yes ttf-wqy-microhei
 
 # Deploy apache conf for trac
 mv /etc/apache2/ports.conf /etc/apache2/ports.conf.orig
