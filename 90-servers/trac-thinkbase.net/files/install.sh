@@ -14,9 +14,14 @@ apt-get install -y --force-yes nano telnet
 
 # Install git/svn and clone PortableTrac
 apt-get install -y --force-yes git subversion
+
+# Prepare github repo's folder
 su u01 -c "mkdir -p /home/u01/github"
+
+# Clone PortableTrac and AdminShells
 cd /home/u01/github
 su u01 -c "git clone -v --progress https://github.com/thinkbase/PortableTrac"
+su u01 -c "git clone -v --progress https://github.com/thinkbase/AdminShells"
 
 # Install dependencies
 apt-get install -y --force-yes sqlite3
