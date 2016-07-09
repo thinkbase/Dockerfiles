@@ -1,7 +1,7 @@
 # Install openssh-server in ubuntu 14.04
 #
 # Build this image:
-#   docker.io build --rm -t ubuntu:14.04-sshd .
+#   docker.io build --force-rm -t ubuntu:14.04-sshd .
 # Run this image:
 #   docker.io run -d -p 10022:22 --name ubuntu_sshd ubuntu:14.04-sshd
 # Or console only:
