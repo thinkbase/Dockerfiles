@@ -61,7 +61,8 @@ mkdir -p /data/trac
 git clone -v --progress https://github.com/thinkbase/trac-thinkbase.net.git /data/trac
 cd /data/trac
 ./restore.sh
-chown www-data:www-data -Rv /data/trac
+chmod g+Xw -Rv /data/trac
+chown u01:u01 -Rv /data/trac
 
 # deploy supervisor
 cp /tmp/files/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
