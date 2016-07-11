@@ -1,0 +1,7 @@
+if [ -z $NODE_BASH_STARTED ]
+then
+	export TERM="xterm-256color"
+	export PATH="~/PortableNodeJS:$PATH"
+	export NODE_BASH_STARTED=`date "+%Y%m%d-%H%M%S"`
+	~/PortableNodeJS/node-bash
+fi

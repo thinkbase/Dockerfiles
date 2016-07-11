@@ -21,7 +21,7 @@ apt-get install -y ttf-ubuntu-font-family
 apt-get install -y ttf-wqy-zenhei ttf-wqy-microhei
 
 # Install development tools
-apt-get install -y build-essential phantomjs
+apt-get install -y build-essential
 
 # Install git/svn
 apt-get install -y git subversion
@@ -35,23 +35,16 @@ apt-get install -y firefox
 # Prepare DISPLAY for u01 (NOTE: require "-v /tmp/.X11-unix:/tmp/.X11-unix" when docker "run")
 echo "export DISPLAY=\":0\"" >> /home/u01/.bashrc
 
-# Install nvm and nodejs
-mkdir -p /opt/nvm
-cd /opt/nvm
-git clone https://github.com/creationix/nvm.git .
-chmod -Rv o+rwX /opt/nvm
-chmod -Rv g+rwX /opt/nvm
-export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/dist
-set +e
-source /opt/nvm/nvm.sh
-nvm install 0.12.2
-set -e
+# Install portable NodeJS
+su u01 -c "git clone -v --progress https://github.com/thinkbase/PortableNodeJS.git ~/PortableNodeJS"
 
-# Prepare more profile for u01
-echo "export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/dist" >> /home/u01/.bashrc
-echo "source /opt/nvm/nvm.sh" >> /home/u01/.bashrc
-echo "nvm use 0.12.2" >> /home/u01/.bashrc
-echo "npm config set registry https://registry.npm.taobao.org" >> /home/u01/.bashrc
+su u01 -c "export TERM=\"xterm-256color\" ; ~/PortableNodeJS/scripts/npm -v"
+
+cp /tmp/files/.bashrc-start-node-bash /home/u01
+chown u01:u01 /home/u01/.bashrc-start-node-bash
+echo "source ~/.bashrc-start-node-bash" >> /home/u01/.bashrc
+
+echo "su - u01" >> /root/.bashrc
 
 # deploy supervisor
 cp /tmp/files/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
