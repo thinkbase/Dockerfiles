@@ -1,0 +1,8 @@
+Split jdk-8u101-linux-x64.tar.gz
+========
+split -b 20000k jdk-8u101-linux-x64.tar.gz jdk-8u101-linux-x64.tar.gz-splited.
+
+Rebuild jdk-8u101-linux-x64.tar.gz
+========
+cat jdk-8u101-linux-x64.tar.gz-splited.* > jdk-8u101-linux-x64.tar.gz
+
