@@ -7,16 +7,16 @@ locale-gen en_US en_US.UTF-8 zh_CN zh_CN.UTF-8
 dpkg-reconfigure locales
 
 # make sure the package repository is up to date
-echo "deb http://cn.archive.ubuntu.com/ubuntu trusty main restricted" > /etc/apt/sources.list
-echo "deb http://cn.archive.ubuntu.com/ubuntu trusty-updates main restricted" >> /etc/apt/sources.list
-echo "deb http://cn.archive.ubuntu.com/ubuntu trusty universe" >> /etc/apt/sources.list
-echo "deb http://cn.archive.ubuntu.com/ubuntu trusty-updates universe" >> /etc/apt/sources.list
-echo "deb http://cn.archive.ubuntu.com/ubuntu trusty multiverse" >> /etc/apt/sources.list
-echo "deb http://cn.archive.ubuntu.com/ubuntu trusty-updates multiverse" >> /etc/apt/sources.list
-echo "deb http://cn.archive.ubuntu.com/ubuntu trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list
-echo "deb http://security.ubuntu.com/ubuntu trusty-security main restricted" >> /etc/apt/sources.list
-echo "deb http://security.ubuntu.com/ubuntu trusty-security universe" >> /etc/apt/sources.list
-echo "deb http://security.ubuntu.com/ubuntu trusty-security multiverse" >> /etc/apt/sources.list
+echo "deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted" > /etc/apt/sources.list
+echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted" >> /etc/apt/sources.list
+echo "deb http://mirrors.aliyun.com/ubuntu/ trusty universe" >> /etc/apt/sources.list
+echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-updates universe" >> /etc/apt/sources.list
+echo "deb http://mirrors.aliyun.com/ubuntu/ trusty multiverse" >> /etc/apt/sources.list
+echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-updates multiverse" >> /etc/apt/sources.list
+echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list
+echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted" >> /etc/apt/sources.list
+echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-security universe" >> /etc/apt/sources.list
+echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-security multiverse" >> /etc/apt/sources.list
 apt-get update
 
 # Install openssh server
