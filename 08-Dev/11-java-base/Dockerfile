@@ -6,7 +6,7 @@
 #   docker build --force-rm -t java-base:1.0 .
 # Run this image:
 #   docker run -d -p 8080:8080 -v ~/VM_data/docker/java-base:/home/u01/workspace --name java-base java-base:1.0
-# Connect to contaainer:
+# Connect to container:
 #   docker exec -it java-base bash
 
 FROM ubuntu:14.04-sshd
