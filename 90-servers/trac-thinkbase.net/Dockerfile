@@ -3,7 +3,7 @@
 #   docker build --force-rm -t trac-thinkbase.net:1.0 .
 #
 # Run this image:
-#   docker run -d -p 8080:8080 -v ~/private:/private --name trac-tk trac-thinkbase.net:1.0
+#   docker run -d -p 80:8080 -v ${HOME}/trac/private:/private --name trac-tk trac-thinkbase.net:1.0
 
 FROM ubuntu:14.04-sshd
 MAINTAINER thinkbase.net
